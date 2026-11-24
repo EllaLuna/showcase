@@ -1,0 +1,10 @@
+{%- comment -%}
+  On-brand "coming soon" block for missing media.
+  Usage: {% include placeholder.html text="Screenshots coming soon. Join the Discord to see them first." ratio="16 / 9" %}
+  The caller MUST add its own <!-- PLACEHOLDER: what belongs here --> comment next to the include,
+  and list it in README.md.
+{%- endcomment -%}
+<div class="placeholder"{% if include.ratio %} style="aspect-ratio: {{ include.ratio }};"{% endif %}>
+  <img class="pixel" src="{{ '/assets/img/brand/cat.png' | relative_url }}" width="13" height="14" alt="" aria-hidden="true">
+  <p>{{ include.text }}</p>
+</div>

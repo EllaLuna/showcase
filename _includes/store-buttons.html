@@ -1,0 +1,27 @@
+{%- comment -%}
+  Store buttons for one game. Usage: {% include store-buttons.html game=game %}
+  steam_url set   -> primary "Wishlist on Steam"
+  steam_url empty -> primary "Join the Discord for updates"
+  itch_url set    -> adds a smaller "Follow on itch.io" (skipped with bar=true)
+  bar=true        -> primary button only, no wrapper row (used by the mobile sticky bar)
+  Discord never appears next to a Steam wishlist button (it lives in header/footer).
+  .btn-wrap exists so themes can add effects that clip-path would otherwise cut off.
+{%- endcomment -%}
+{%- assign g = include.game -%}
+{%- capture primary -%}
+  {%- if g.steam_url and g.steam_url != blank -%}
+  <span class="btn-wrap btn-wrap--primary"><a class="btn btn--primary" href="{{ g.steam_url }}" target="_blank" rel="noopener">{% include icons/steam.svg %}<span>Wishlist on Steam<span class="visually-hidden"> (opens in a new tab)</span></span></a></span>
+  {%- else -%}
+  <span class="btn-wrap btn-wrap--primary"><a class="btn btn--primary" href="{{ site.discord_url }}" target="_blank" rel="noopener">{% include icons/discord.svg %}<span>Join the Discord for updates<span class="visually-hidden"> (opens in a new tab)</span></span></a></span>
+  {%- endif -%}
+{%- endcapture -%}
+{%- if include.bar -%}
+{{ primary }}
+{%- else -%}
+<div class="btn-row store-buttons">
+  {{ primary }}
+  {%- if g.itch_url and g.itch_url != blank %}
+  <span class="btn-wrap"><a class="btn btn--secondary" href="{{ g.itch_url }}" target="_blank" rel="noopener">{% include icons/itch.svg %}<span>Follow on itch.io<span class="visually-hidden"> (opens in a new tab)</span></span></a></span>
+  {%- endif %}
+</div>
+{%- endif -%}

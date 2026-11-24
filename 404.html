@@ -1,0 +1,17 @@
+---
+layout: default
+title: Page not found
+permalink: /404.html
+sitemap: false
+---
+<div class="wrap page-center">
+  <img class="sprite-404 pixel" src="{{ '/assets/img/brand/cat.png' | relative_url }}" width="13" height="14" alt="">
+  <h1>This page wandered off.</h1>
+  <p>Even cats get lost sometimes.</p>
+  <div class="btn-row btn-row--center">
+    <a class="btn" href="{{ '/' | relative_url }}">Back to the homepage</a>
+    {% for game in site.data.games %}
+    <a class="btn btn--secondary" href="{{ '/' | append: game.slug | append: '/' | relative_url }}">{{ game.title }}</a>
+    {% endfor %}
+  </div>
+</div>

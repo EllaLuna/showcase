@@ -1,0 +1,20 @@
+<header class="site-header sky">
+  {% include pixel-stars.html id="header" %}
+  <div class="wrap header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <img class="pixel" src="{{ '/assets/img/brand/logo-outline.png' | relative_url }}" width="97" height="134" alt="Tiny Purple Cat, home">
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        {% for game in site.data.games %}
+        <li><a class="nav-link" href="{{ '/' | append: game.slug | append: '/' | relative_url }}"{% if page.url contains game.slug %} aria-current="page"{% endif %}>{{ game.title }}</a></li>
+        {% endfor %}
+        <li class="nav-icons">
+          <a class="nav-icon" href="{{ site.discord_url }}" target="_blank" rel="noopener" aria-label="Tiny Purple Cat on Discord (opens in a new tab)">{% include icons/discord.svg %}</a>
+          <a class="nav-icon" href="{{ site.instagram_url }}" target="_blank" rel="noopener" aria-label="Tiny Purple Cat on Instagram (opens in a new tab)">{% include icons/instagram.svg %}</a>
+        </li>
+      </ul>
+    </nav>
+    <img class="perch-cat pixel" src="{{ '/assets/img/brand/cat.png' | relative_url }}" width="13" height="14" alt="" aria-hidden="true">
+  </div>
+</header>

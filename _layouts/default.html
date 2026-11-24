@@ -1,0 +1,21 @@
+<!doctype html>
+{%- comment -%}
+  Game pages pass `game: <slug>` in front matter; the theme then comes from _data/games.yml.
+{%- endcomment -%}
+{%- assign g = nil -%}
+{%- if page.game %}{% assign g = site.data.games | where: "slug", page.game | first %}{% endif -%}
+{%- assign theme = page.theme | default: g.theme | default: 'shell' -%}
+<html lang="en">
+<head>
+  {% include head.html %}
+</head>
+<body class="theme-{{ theme }}">
+  <a class="skip-link" href="#main">Skip to content</a>
+  {% include header.html %}
+  <main id="main">
+    {{ content }}
+  </main>
+  {% include footer.html %}
+  <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+</body>
+</html>

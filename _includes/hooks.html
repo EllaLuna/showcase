@@ -1,0 +1,13 @@
+{%- assign g = include.game -%}
+<div class="wrap">
+  <h2 class="visually-hidden">About {{ g.title }}</h2>
+  <p class="lead">{{ g.pitch }}</p>
+  <ol class="hooks" role="list">
+    {%- for hook in g.hooks %}
+    <li class="hook">
+      <h3 class="hook-title">{{ hook.title }}</h3>
+      <p>{{ hook.text }}</p>
+    </li>
+    {%- endfor %}
+  </ol>
+</div>

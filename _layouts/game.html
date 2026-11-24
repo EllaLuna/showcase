@@ -1,0 +1,34 @@
+---
+layout: default
+---
+{%- assign game = site.data.games | where: "slug", page.game | first -%}
+<article class="game">
+
+  <section class="game-hero" aria-labelledby="game-title">
+    <div class="wrap">
+      <h1 id="game-title" class="game-title">{{ game.title }}</h1>
+      {% if game.tag %}<p class="tag">{{ game.tag }}</p>{% endif %}
+      {% include trailer.html game=game %}
+      <div id="hero-cta" class="hero-cta">
+        {% include store-buttons.html game=game %}
+        {% if game.content_note %}{% include content-note.html game=game %}{% endif %}
+      </div>
+    </div>
+  </section>
+
+  <section class="pitch-section" aria-label="About {{ game.title }}">
+    {% include hooks.html game=game %}
+  </section>
+
+  <section class="gallery-section" aria-label="Screenshots and clips">
+    {% include gallery.html game=game %}
+  </section>
+
+  {% include cta-band.html game=game %}
+
+  {% if game.credits and game.credits != blank %}
+  <p class="credits wrap">{{ game.credits }}</p>
+  {% endif %}
+
+  {% include mobile-cta-bar.html game=game %}
+</article>

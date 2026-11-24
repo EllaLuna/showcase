@@ -1,0 +1,89 @@
+# All per-game content and links live here. Templates never hard-code game text.
+# Copy below is from docs/site-spec.md section 8 (use exactly).
+
+- slug: a-mind-apart
+  title: A Mind Apart
+  theme: ama
+  status: upcoming
+  genre: Narrative puzzle adventure
+  pitch: "A girl wakes in a surreal storybook world with no memory of who she is. To move forward, she must collect the pieces of her past, and face the guilt that comes with them."
+  hooks:
+    - title: Bonds you choose.
+      text: "Not everyone here has your best interests at heart. Decide who to let in, and who to keep at arm's length. The closer they get, the more they change you."
+    - title: A bow and magic arrows.
+      text: "Solve puzzles with a bow and enchanted arrows. Every puzzle you crack brings back another piece of who you were."
+    - title: Paths that keep shifting.
+      text: "Every choice and every bond opens some paths and closes others, right up to the final moments."
+  steam_url: https://store.steampowered.com/app/3713290/A_Mind_Apart/
+  itch_url:                 # empty: button hidden
+  trailer_youtube_id: wmI7o-bNMDo
+  poster: /assets/img/games/a-mind-apart/key-art.webp
+  door_image: /assets/img/games/a-mind-apart/screenshots/falling.webp   # homepage door; key art crops badly into a tall panel and shows the companions
+  # Screenshots: file is the base name in assets/img/games/<slug>/screenshots/ (name.webp + name-800.webp).
+  # ALT TEXT BELOW IS A DRAFT, pending the studio's approval.
+  screenshots:
+    - file: falling
+      alt: "A girl with pink hair and an eye patch falls through a starry night sky, reaching for a stuffed rabbit tumbling above her."
+    - file: gate
+      alt: "In pixel art, a girl stands on a floating stone platform in front of a tall glowing blue rune door, with a dark cloaked figure before it."
+    - file: house
+      alt: "Inside a round, book-lined room with a spiral staircase, a fireplace and a fridge, a character in a top hat speaks in a dialogue box."
+    - file: picnic
+      alt: "Two pixel-art characters share a picnic on a blue checkered blanket beneath pink blossom trees."
+    - file: training
+      alt: "In a sunny green clearing, a character offers a bow near an archery target, with a dialogue box on screen."
+  # Clips: short muted loops in .../clips/ (file.mp4 + poster .webp)
+  clips:
+    - file: night-forest.mp4
+      poster: night-forest.webp
+      alt: "A girl walks through a dark forest at night, past glowing purple trees toward a stone gate."
+  content_note: true
+  content_note_summary: "Content note: A Mind Apart explores complex trauma, childhood neglect and self-destructive behavior. It handles these themes with care, but please play at your own pace."
+  content_note_text: "The game does not depict self-harm directly. If any of this feels close to home, take breaks whenever you need. If you're struggling, you can find support lines in your country at [findahelpline.com](https://findahelpline.com)."
+  cta_heading: Wishlist A Mind Apart
+  cta_text: Every wishlist helps a small studio get seen on Steam.
+  credits: "Made by Tiny Purple Cat, with art by Alexander Epelman and music by Naor Hazan."
+
+- slug: increcat-cafe
+  title: IncreCat Café
+  theme: increcat
+  status: early-development
+  tag: In development
+  genre: Incremental cat-café management game
+  pitch: "Run a chaotic cat café, raise cats for their forever homes, and leave Meowlon Whiskers in the dust."
+  hooks:
+    - title: Cats looking for homes
+      text: "Raise and care for a café full of cats, then help each one find its forever home."
+    - title: Cat-astrophic rush hour
+      text: "Juggle orders, sling plates and keep every customer happy as your café gets busier, and furrier, by the minute."
+    - title: Nine lives' worth of upgrades
+      text: "Unlock new recipes, cat activities, abilities and more on a skill tree that keeps branching."
+  steam_url:                # empty: Discord becomes the primary CTA
+  itch_url:
+  trailer_youtube_id:       # empty: placeholder shown
+  poster:                   # empty: placeholder shown
+  door_image: /assets/img/games/increcat-cafe/screenshots/cafe-rush.webp   # homepage door background
+  # ALT TEXT BELOW IS A DRAFT, pending the studio's approval.
+  screenshots:
+    - file: cafe-rush
+      alt: "A busy pixel-art café floor full of customers, cats, coins and hearts, with a long stack of plates arcing across the room."
+    - file: cafe-orders
+      alt: "A waiter carries a tall, swaying stack of cups while customers wait with order bubbles above their heads."
+    - file: cafe-opening
+      alt: "A pixel-art café with a wooden floor, a glass front door and plate stacks along the back wall, with a few customers and cats inside."
+    - file: skill-tree-1
+      alt: "A skill tree screen with locked upgrade nodes joined by lines, and a tooltip for an upgrade called Zoomies."
+    - file: skill-tree-2
+      alt: "A skill tree screen with two unlocked green nodes and a tooltip for an upgrade called Big Radius Go BOOM."
+  clips:
+    - file: rush-hour.mp4
+      poster: rush-hour.webp
+      alt: "Customers pour into the café as the waiter swings a tall stack of plates around the room."
+  content_note: false
+  # Shown while steam_url is empty:
+  cta_heading: Follow along
+  cta_text: IncreCat Café is early in development. Join the Discord to watch it grow.
+  # Shown once steam_url is set:
+  cta_steam_heading: Wishlist IncreCat Café
+  cta_steam_text: Every wishlist helps a small studio get seen on Steam.
+  credits:                  # intentionally empty; the co-creator does not want to be named

@@ -1,0 +1,55 @@
+{%- comment -%}
+  Screenshots (lightbox) and clips (muted loops). Clips come first.
+  games.yml: screenshots: [{file: "name", alt: "..."}]  -> screenshots/name.webp (1920w) + name-800.webp
+             clips:       [{file: "x.mp4", poster: "x.webp", alt: "..."}] -> clips/
+{%- endcomment -%}
+{%- assign g = include.game -%}
+{%- assign base = '/assets/img/games/' | append: g.slug | append: '/' -%}
+{%- if g.screenshots.size > 0 or g.clips.size > 0 -%}
+<div class="wrap">
+  <ul class="gallery-grid" role="list">
+    {%- for clip in g.clips %}
+    <li class="gallery-item">
+      <div class="shard-frame">
+        <video class="clip shard-target" muted loop playsinline preload="none" controls
+               poster="{{ base | append: 'clips/' | append: clip.poster | relative_url }}"
+               aria-label="{{ clip.alt }}">
+          <source src="{{ base | append: 'clips/' | append: clip.file | relative_url }}" type="video/mp4">
+        </video>
+      </div>
+    </li>
+    {%- endfor %}
+    {%- for shot in g.screenshots %}
+    <li class="gallery-item">
+      <div class="shard-frame">
+        <a class="shot shard-target" href="{{ base | append: 'screenshots/' | append: shot.file | append: '.webp' | relative_url }}" data-lightbox>
+          <img src="{{ base | append: 'screenshots/' | append: shot.file | append: '-800.webp' | relative_url }}"
+               srcset="{{ base | append: 'screenshots/' | append: shot.file | append: '-800.webp' | relative_url }} 800w, {{ base | append: 'screenshots/' | append: shot.file | append: '.webp' | relative_url }} 1920w"
+               sizes="(min-width: 1100px) 360px, (min-width: 600px) 45vw, 92vw"
+               width="800" height="450" loading="lazy" decoding="async" alt="{{ shot.alt }}">
+        </a>
+      </div>
+    </li>
+    {%- endfor %}
+  </ul>
+</div>
+
+<dialog class="lightbox" aria-label="Screenshot viewer">
+  <div class="lb-inner">
+    <div class="lb-bar">
+      <p class="lb-count" aria-live="polite"></p>
+      <button type="button" class="lb-btn lb-close">Close<span class="visually-hidden"> viewer</span></button>
+    </div>
+    <figure class="lb-figure"><img alt=""></figure>
+    <div class="lb-nav">
+      <button type="button" class="lb-btn lb-prev">Previous<span class="visually-hidden"> screenshot</span></button>
+      <button type="button" class="lb-btn lb-next">Next<span class="visually-hidden"> screenshot</span></button>
+    </div>
+  </div>
+</dialog>
+{%- else -%}
+<!-- PLACEHOLDER: {{ g.title }} gallery (screenshots and clips). Add entries to screenshots/clips in _data/games.yml. -->
+<div class="wrap">
+  {% include placeholder.html text="Screenshots coming soon. Join the Discord to see them first." ratio="16 / 9" %}
+</div>
+{%- endif -%}

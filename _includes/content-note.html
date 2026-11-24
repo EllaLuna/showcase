@@ -1,0 +1,5 @@
+{%- assign g = include.game -%}
+<details class="content-note">
+  <summary>{{ g.content_note_summary }}</summary>
+  {{ g.content_note_text | markdownify }}
+</details>

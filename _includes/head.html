@@ -1,0 +1,16 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#343b8c">
+{% comment %} Titles, description, canonical, Open Graph and Twitter tags come from jekyll-seo-tag.
+   Social image: page.image, else site.image (set in _config.yml). {% endcomment %}
+{% seo %}
+<link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/img/brand/favicon-32.png' | relative_url }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/img/brand/apple-touch-icon.png' | relative_url }}">
+{% comment %} Preload only the shell heading font plus this page's own heading font. {% endcomment %}
+<link rel="preload" href="{{ '/assets/fonts/PixelifySans.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+{% if theme == 'ama' %}<link rel="preload" href="{{ '/assets/fonts/cmunssdc.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>{% endif %}
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+{% comment %} Theme CSS: one per game page; the homepage lists both in `themes:` front matter. {% endcomment %}
+{% if page.themes %}{% for t in page.themes %}<link rel="stylesheet" href="{{ '/assets/css/theme-' | append: t | append: '.css' | relative_url }}">
+{% endfor %}{% elsif theme != 'shell' %}<link rel="stylesheet" href="{{ '/assets/css/theme-' | append: theme | append: '.css' | relative_url }}">
+{% endif %}

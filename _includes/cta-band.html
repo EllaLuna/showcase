@@ -1,0 +1,16 @@
+{%- assign g = include.game -%}
+{%- if g.steam_url and g.steam_url != blank and g.cta_steam_heading -%}
+  {%- assign cta_heading = g.cta_steam_heading -%}
+  {%- assign cta_text = g.cta_steam_text -%}
+{%- else -%}
+  {%- assign cta_heading = g.cta_heading -%}
+  {%- assign cta_text = g.cta_text -%}
+{%- endif -%}
+<section id="cta-band" class="cta-band sky" aria-labelledby="cta-heading">
+  {% include pixel-stars.html id="cta" %}
+  <div class="wrap cta-inner">
+    <h2 id="cta-heading">{{ cta_heading }}</h2>
+    <p>{{ cta_text }}</p>
+    {% include store-buttons.html game=g %}
+  </div>
+</section>

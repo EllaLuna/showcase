@@ -1,0 +1,35 @@
+/* ==========================================================================
+   IncreCat Café: PROVISIONAL theme (spec 7.3). Shell fonts, milky background,
+   ginger accent, rounded shapes. Replace the palette once the game has its own art.
+   Contrast: indigo on #fff3e2 = 8.9:1; purple button text (cream on #76428a) = 6.6:1;
+   muted #4a5099 on #fff3e2 = 6.6:1; tag text (indigo-dark on ginger #e8935a) = 5.4:1.
+   ========================================================================== */
+.theme-increcat {
+  --bg: #fff3e2;
+  --surface: #fffaf1;
+  --text: var(--indigo);
+  --muted: #4a5099;
+  --accent-deco: #e8935a;   /* ginger: tags, numerals, highlights (decorative, never body text) */
+  --btn-radius: 6px;
+  --media-radius: 16px;
+  --ph-radius: 16px;
+  --door-scrim: rgba(255, 243, 226, 0.95);
+}
+
+.theme-increcat .tag { border-radius: 999px; }
+.theme-increcat .hook { border: 2px solid rgba(232, 147, 90, 0.45); }
+.theme-increcat .hook::before { color: var(--accent-deco); }
+.theme-increcat .placeholder { border-color: var(--accent-deco); }
+.theme-increcat .btn--secondary { border-radius: var(--btn-radius); }
+
+/* Sparse touch: a small paw-print divider above the pitch (decorative) */
+.theme-increcat .pitch-section .wrap::before {
+  content: "";
+  display: block;
+  width: 48px; height: 40px;
+  margin-bottom: var(--s4);
+  background: var(--accent-deco);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 10' shape-rendering='crispEdges'%3E%3Crect x='1' y='2' width='2' height='2'/%3E%3Crect x='4' y='0' width='2' height='2'/%3E%3Crect x='7' y='0' width='2' height='2'/%3E%3Crect x='10' y='2' width='2' height='2'/%3E%3Crect x='4' y='4' width='4' height='2'/%3E%3Crect x='3' y='6' width='6' height='3'/%3E%3C/svg%3E") no-repeat center / contain;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 10' shape-rendering='crispEdges'%3E%3Crect x='1' y='2' width='2' height='2'/%3E%3Crect x='4' y='0' width='2' height='2'/%3E%3Crect x='7' y='0' width='2' height='2'/%3E%3Crect x='10' y='2' width='2' height='2'/%3E%3Crect x='4' y='4' width='4' height='2'/%3E%3Crect x='3' y='6' width='6' height='3'/%3E%3C/svg%3E") no-repeat center / contain;
+  image-rendering: pixelated;
+}

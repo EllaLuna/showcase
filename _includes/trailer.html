@@ -1,0 +1,19 @@
+{%- comment -%}
+  Click-to-load YouTube trailer. Nothing is requested from YouTube/Google before the click.
+  Without JS the poster is a plain link to youtube.com/watch.
+{%- endcomment -%}
+{%- assign g = include.game -%}
+{%- if g.trailer_youtube_id and g.trailer_youtube_id != blank and g.poster and g.poster != blank -%}
+<div class="trailer" data-youtube-id="{{ g.trailer_youtube_id }}" data-title="{{ g.title }} trailer">
+  <a class="trailer-poster shard-target" href="https://www.youtube.com/watch?v={{ g.trailer_youtube_id }}" target="_blank" rel="noopener">
+    <img src="{{ g.poster | relative_url }}" alt="" width="920" height="430" decoding="async" fetchpriority="high">
+    <span class="trailer-play" aria-hidden="true"><span class="trailer-play-badge">{% include icons/play.svg %}</span></span>
+    <span class="visually-hidden">Watch the {{ g.title }} trailer (opens YouTube in a new tab if JavaScript is off)</span>
+  </a>
+</div>
+{%- else -%}
+<!-- PLACEHOLDER: {{ g.title }} trailer (16:9). Set trailer_youtube_id and poster in _data/games.yml. -->
+<div class="trailer">
+  {% include placeholder.html text="Trailer coming soon. Join the Discord to see it first." ratio="16 / 9" %}
+</div>
+{%- endif -%}

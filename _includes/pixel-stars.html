@@ -1,0 +1,27 @@
+{%- comment -%}
+  Decorative night-sky star layer. Fills its (position: relative) parent.
+  Usage: {% include pixel-stars.html id="header" %}   (id must be unique per page)
+  Stars are 4-point "plus" shapes on a 3px grid, drawn with crispEdges so they never blur.
+{%- endcomment -%}
+<svg class="stars" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <path id="plus-{{ include.id }}" d="M3 0h3v3h3v3h-3v3h-3v-3h-3v-3h3z" fill="currentColor"/>
+    <pattern id="sky-{{ include.id }}" width="540" height="132" patternUnits="userSpaceOnUse">
+      <g shape-rendering="crispEdges">
+        <use href="#plus-{{ include.id }}" x="24" y="30"/>
+        <use href="#plus-{{ include.id }}" x="78" y="96" class="twinkle t2"/>
+        <use href="#plus-{{ include.id }}" x="147" y="12" class="twinkle"/>
+        <use href="#plus-{{ include.id }}" x="204" y="72"/>
+        <use href="#plus-{{ include.id }}" x="261" y="105" class="twinkle t3"/>
+        <use href="#plus-{{ include.id }}" x="297" y="27"/>
+        <use href="#plus-{{ include.id }}" x="348" y="84" class="twinkle t2"/>
+        <use href="#plus-{{ include.id }}" x="399" y="15"/>
+        <use href="#plus-{{ include.id }}" x="441" y="108" class="twinkle"/>
+        <use href="#plus-{{ include.id }}" x="474" y="51"/>
+        <use href="#plus-{{ include.id }}" x="510" y="9" class="twinkle t3"/>
+        <use href="#plus-{{ include.id }}" x="120" y="54"/>
+      </g>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#sky-{{ include.id }})"/>
+</svg>

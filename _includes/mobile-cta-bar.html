@@ -1,0 +1,9 @@
+{%- comment -%}
+  Phones only. Hidden without JS; main.js shows it once the hero buttons scroll away
+  and hides it again while the final CTA band is on screen.
+{%- endcomment -%}
+{%- assign g = include.game -%}
+<div id="mobile-cta-bar" class="mobile-cta-bar" hidden>
+  <p class="mcb-title">{{ g.title }}</p>
+  {% include store-buttons.html game=g bar=true %}
+</div>
