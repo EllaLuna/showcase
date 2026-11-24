@@ -60,8 +60,11 @@
       text: "Unlock new recipes, cat activities, abilities and more on a skill tree that keeps branching."
   steam_url:                # empty: Discord becomes the primary CTA
   itch_url:
-  trailer_youtube_id:       # empty: placeholder shown
-  poster:                   # empty: placeholder shown
+  trailer_youtube_id:       # empty: falls back to trailer_video below; replace with a real trailer when there is one
+  # Stand-in until a trailer exists: an 18s highlight reel of the gameplay capture with a title card, self-hosted, plays on click (silent)
+  trailer_video: /assets/img/games/increcat-cafe/gameplay.mp4
+  poster: /assets/img/games/increcat-cafe/gameplay-poster.webp
+  trailer_label: "Gameplay highlights"
   door_image: /assets/img/games/increcat-cafe/screenshots/cafe-rush.webp   # homepage row image
   # Alt text approved by the studio (2026-11-24).
   screenshots:
@@ -75,10 +78,7 @@
       alt: "A skill tree screen with locked upgrade nodes joined by lines, and a tooltip for an upgrade called Zoomies."
     - file: skill-tree-2
       alt: "A skill tree screen with two unlocked green nodes and a tooltip for an upgrade called Big Radius Go BOOM."
-  clips:
-    - file: rush-hour.mp4
-      poster: rush-hour.webp
-      alt: "Customers pour into the café as the waiter swings a tall stack of plates around the room."
+  clips: []
   content_note: false
   # Shown while steam_url is empty:
   cta_heading: Follow along

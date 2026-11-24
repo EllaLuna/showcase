@@ -30,7 +30,7 @@ Everything per game lives in `_data/games.yml`; site-wide links live in `_config
 |---|---|
 | **Turn on Steam wishlisting for IncreCat Café** | Paste its Steam URL into `steam_url` under `increcat-cafe`. Nothing else changes: the main button becomes "Wishlist on Steam", the closing band switches to "Wishlist IncreCat Café", and the footer gains a Steam link. |
 | Show an itch.io button | Paste the URL into `itch_url`. Empty means hidden. |
-| Trailer | `trailer_youtube_id` (the part after `v=`) and `poster` (a local image). Empty shows a placeholder. |
+| Trailer | `trailer_youtube_id` (the part after `v=`) and `poster` (a local image) for a click-to-load YouTube trailer. Without an id, `trailer_video` (a local MP4) plays instead; with neither, a placeholder shows. |
 | Discord / Instagram links | `discord_url`, `instagram_url` in `_config.yml`. |
 | Studio blurb on the home page | `studio_blurb` in `_config.yml`. |
 | Pitch, hooks, content note, closing-band copy, credits | The matching fields in `_data/games.yml`. |
@@ -59,9 +59,8 @@ Each is marked in the source with `<!-- PLACEHOLDER: ... -->`.
 |---|---|
 | `_data/games.yml` → `increcat-cafe.steam_url` | Steam store URL (empty on purpose until the page exists; Discord is the main button meanwhile). |
 | `_data/games.yml` → both `itch_url` | Empty on purpose; the itch.io button is hidden. |
-| IncreCat Café trailer (`trailer.html`) | Placeholder shown until `trailer_youtube_id` and `poster` are set. |
+| IncreCat Café trailer | An 18-second gameplay highlight reel with a title card (`trailer_video`, silent, 1.1MB) stands in. When a real trailer exists, set `trailer_youtube_id` and `poster`; the YouTube click-to-load player then takes over automatically. |
 | IncreCat Café key art | None yet; its homepage row uses a screenshot (`door_image`). |
-| A Mind Apart key art | `assets/img/games/a-mind-apart/key-art.webp` and `og.jpg` are made from the 920×430 `capsule_header.png`. Replace with the 1280×720 key art (`Youtube_Tumbnail.png`) when you have it (the trailer poster is shown at 16:9 and will look soft until then). |
 | A Mind Apart title logo | Not supplied, so the title is set in CMU Sans Serif with the glow treatment. |
 | IncreCat Café visual identity | `theme-increcat.css` is provisional (spec 7.3). |
 | Analytics | None, on purpose. |
