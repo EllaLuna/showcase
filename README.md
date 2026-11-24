@@ -6,7 +6,7 @@ Static Jekyll site for GitHub Pages: the studio home page plus one page per game
 
 ```powershell
 bundle install            # first time only
-bundle exec jekyll serve  # http://localhost:4000
+bundle exec jekyll serve  # http://localhost:4000/showcase/
 bundle exec jekyll build  # check the build passes (output goes to _site/)
 ```
 
@@ -14,9 +14,13 @@ Ruby is needed (on Windows: `winget install RubyInstallerTeam.RubyWithDevKit.3.3
 
 ## Deploy
 
-1. Push to the `main` branch of the `EllaLuna.github.io` repo.
+1. Push to the `main` branch of the `EllaLuna/showcase` repo.
 2. In the repo on GitHub: **Settings → Pages → Build and deployment → Deploy from a branch → `main` / (root)**. This can only be done by you in the GitHub settings.
-3. The site appears at https://ellaluna.github.io after a minute or two.
+3. The site appears at https://ellaluna.github.io/showcase/ after a minute or two.
+
+`_config.yml` has `baseurl: "/showcase"` because this is a project site. If you ever rename the repo to `EllaLuna.github.io` (a user site served from the root), set `baseurl: ""`.
+
+Locally the preview is then at http://localhost:4000/showcase/.
 
 ## Update links and copy
 

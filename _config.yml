@@ -1,7 +1,7 @@
 title: Tiny Purple Cat
 description: Indie games about heartfelt stories, cozy chaos and cats.
 url: https://ellaluna.github.io
-baseurl: ""
+baseurl: "/showcase"   # project site at https://ellaluna.github.io/showcase/ (use "" if the repo is renamed EllaLuna.github.io)
 lang: en
 
 # Site-wide links
@@ -11,8 +11,13 @@ instagram_url: https://www.instagram.com/tinypurplecatstudio/
 # "Who we are" blurb on the homepage (spec section 8; use exactly)
 studio_blurb: "Tiny Purple Cat is a small indie studio that grows a little with every game. A Mind Apart is made together with artist Alexander Epelman and musician Naor Hazan, and IncreCat Café is co-created with a fellow designer and artist. Our games range from heartfelt stories to cozy chaos, and there's usually a cat involved."
 
-# Default social image (1200x630). Game pages can override with `image` in front matter.
-image: /assets/img/brand/og-home.png
+# Default social image (1200x630) for every page; game pages override with `image` in front matter.
+# (jekyll-seo-tag reads page.image, so it is set through front-matter defaults.)
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/img/brand/og-home.png
 
 plugins:
   - jekyll-seo-tag

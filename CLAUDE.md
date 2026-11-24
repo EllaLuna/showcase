@@ -33,14 +33,14 @@ Static GitHub Pages site for the indie studio **Tiny Purple Cat**, showcasing tw
 - **Jekyll, built by GitHub Pages.** Only plugins on the GitHub Pages whitelist (`jekyll-seo-tag`, `jekyll-sitemap`).
 - **Vanilla JS and plain CSS.** No frameworks, no npm build step, no CSS preprocessors beyond what Jekyll supports natively (we use plain CSS).
 - Progressive enhancement: the site must work with JS off.
-- Repo: `EllaLuna.github.io`. URL: `https://ellaluna.github.io`, with `baseurl: ""`.
+- Repo: `EllaLuna/showcase` (project site). URL: `https://ellaluna.github.io`, with `baseurl: "/showcase"`. (The original plan was a `EllaLuna.github.io` user-site repo with `baseurl: ""`; switch back if the repo is renamed.)
 - `docs/` holds planning documents only. Keep it out of the built site with `exclude: [docs, README.md, CLAUDE.md, Gemfile, Gemfile.lock]` in `_config.yml`.
 
 ## Commands
 
 ```bash
 bundle install                 # first time only
-bundle exec jekyll serve       # local preview at http://localhost:4000
+bundle exec jekyll serve       # local preview at http://localhost:4000/showcase/
 bundle exec jekyll build       # check the build passes before finishing a task
 ```
 
