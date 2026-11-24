@@ -60,11 +60,10 @@ Each is marked in the source with `<!-- PLACEHOLDER: ... -->`.
 | `_data/games.yml` → `increcat-cafe.steam_url` | Steam store URL (empty on purpose until the page exists; Discord is the main button meanwhile). |
 | `_data/games.yml` → both `itch_url` | Empty on purpose; the itch.io button is hidden. |
 | IncreCat Café trailer (`trailer.html`) | Placeholder shown until `trailer_youtube_id` and `poster` are set. |
-| IncreCat Café key art | None yet; its homepage door uses a screenshot (`door_image`). |
+| IncreCat Café key art | None yet; its homepage row uses a screenshot (`door_image`). |
 | A Mind Apart key art | `assets/img/games/a-mind-apart/key-art.webp` and `og.jpg` are made from the 920×430 `capsule_header.png`. Replace with the 1280×720 key art (`Youtube_Tumbnail.png`) when you have it (the trailer poster is shown at 16:9 and will look soft until then). |
 | A Mind Apart title logo | Not supplied, so the title is set in CMU Sans Serif with the glow treatment. |
 | IncreCat Café visual identity | `theme-increcat.css` is provisional (spec 7.3). |
-| Alt text | All current alt text in `_data/games.yml` is a draft awaiting the studio's approval. |
 | Analytics | None, on purpose. |
 
 ## Credits for bundled assets

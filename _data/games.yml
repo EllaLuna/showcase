@@ -6,7 +6,7 @@
   theme: ama
   status: upcoming
   genre: Narrative puzzle adventure
-  pitch: "A girl wakes in a surreal storybook world with no memory of who she is. To move forward, she must collect the pieces of her past, and face the guilt that comes with them."
+  pitch: "A girl wakes up in a surreal storybook world and embarks on a journey to collect her memories, while managing the guilt surrounding her past."
   hooks:
     - title: Bonds you choose.
       text: "Not everyone here has your best interests at heart. Decide who to let in, and who to keep at arm's length. The closer they get, the more they change you."
@@ -18,9 +18,9 @@
   itch_url:                 # empty: button hidden
   trailer_youtube_id: wmI7o-bNMDo
   poster: /assets/img/games/a-mind-apart/key-art.webp
-  door_image: /assets/img/games/a-mind-apart/screenshots/falling.webp   # homepage door; key art crops badly into a tall panel and shows the companions
+  door_image: /assets/img/games/a-mind-apart/screenshots/falling.webp   # homepage row image; chosen over the key art so the companions are not the headline
   # Screenshots: file is the base name in assets/img/games/<slug>/screenshots/ (name.webp + name-800.webp).
-  # ALT TEXT BELOW IS A DRAFT, pending the studio's approval.
+  # Alt text approved by the studio (2026-11-24).
   screenshots:
     - file: falling
       alt: "A girl with pink hair and an eye patch falls through a starry night sky, reaching for a stuffed rabbit tumbling above her."
@@ -50,7 +50,7 @@
   status: early-development
   tag: In development
   genre: Incremental cat-café management game
-  pitch: "Run a chaotic cat café, raise cats for their forever homes, and leave Meowlon Whiskers in the dust."
+  pitch: "Manage a cat café, raise cats for their forever home and surpass Meowlon Whiskers."
   hooks:
     - title: Cats looking for homes
       text: "Raise and care for a café full of cats, then help each one find its forever home."
@@ -62,8 +62,8 @@
   itch_url:
   trailer_youtube_id:       # empty: placeholder shown
   poster:                   # empty: placeholder shown
-  door_image: /assets/img/games/increcat-cafe/screenshots/cafe-rush.webp   # homepage door background
-  # ALT TEXT BELOW IS A DRAFT, pending the studio's approval.
+  door_image: /assets/img/games/increcat-cafe/screenshots/cafe-rush.webp   # homepage row image
+  # Alt text approved by the studio (2026-11-24).
   screenshots:
     - file: cafe-rush
       alt: "A busy pixel-art café floor full of customers, cats, coins and hearts, with a long stack of plates arcing across the room."

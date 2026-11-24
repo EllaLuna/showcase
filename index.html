@@ -5,27 +5,31 @@ themes: [ama, increcat]
 ---
 <h1 class="visually-hidden">Tiny Purple Cat</h1>
 
-<div class="doors">
-  {%- for game in site.data.games %}
-  {%- assign art = game.door_image | default: game.poster %}
-  <article class="door theme-{{ game.theme }}" aria-labelledby="door-{{ game.slug }}">
-    {%- if art and art != blank %}
-    <img class="door-art" src="{{ art | relative_url }}" alt="" {% if forloop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async">
-    {%- else %}
-    <!-- PLACEHOLDER: {{ game.title }} door background (best screenshot or key art). Set door_image in _data/games.yml. -->
-    {%- endif %}
-    <div class="door-body">
+{%- for game in site.data.games %}
+{%- assign art = game.door_image | default: game.poster %}
+{%- assign game_url = '/' | append: game.slug | append: '/' | relative_url %}
+<section class="game-row theme-{{ game.theme }}" aria-labelledby="row-{{ game.slug }}">
+  <div class="wrap game-row-inner">
+    <div class="game-row-art shard-frame">
+      {%- if art and art != blank %}
+      <div class="art shard-target"><img src="{{ art | relative_url }}" alt="" {% if forloop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async" width="1920" height="1080"></div>
+      {%- else %}
+      <!-- PLACEHOLDER: {{ game.title }} homepage image (best screenshot or key art). Set door_image in _data/games.yml. -->
+      {% include placeholder.html text="Art coming soon." ratio="16 / 9" %}
+      {%- endif %}
+    </div>
+    <div class="game-row-body">
       {%- if game.tag %}<p class="tag">{{ game.tag }}</p>{% endif %}
-      <h2 id="door-{{ game.slug }}"><a href="{{ '/' | append: game.slug | append: '/' | relative_url }}">{{ game.title }}</a></h2>
-      <p class="door-pitch">{{ game.pitch }}</p>
-      <div class="door-actions">
+      <h2 id="row-{{ game.slug }}"><a href="{{ game_url }}">{{ game.title }}</a></h2>
+      <p class="game-row-pitch">{{ game.pitch }}</p>
+      <div class="row-actions">
         {% include store-buttons.html game=game bar=true %}
-        <a class="door-more" href="{{ '/' | append: game.slug | append: '/' | relative_url }}">See the game <span aria-hidden="true">&rarr;</span></a>
+        <a class="row-more" href="{{ game_url }}">See the game <span aria-hidden="true">&rarr;</span></a>
       </div>
     </div>
-  </article>
-  {%- endfor %}
-</div>
+  </div>
+</section>
+{%- endfor %}
 
 <section class="who" aria-labelledby="who-heading">
   <div class="wrap who-inner">
@@ -33,7 +37,7 @@ themes: [ama, increcat]
     <p>{{ site.studio_blurb }}</p>
     <div class="btn-row">
       <a class="btn" href="{{ site.discord_url }}" target="_blank" rel="noopener">{% include icons/discord.svg %}<span>Join the Discord<span class="visually-hidden"> (opens in a new tab)</span></span></a>
-      <a class="door-more" href="{{ site.instagram_url }}" target="_blank" rel="noopener">Follow us on Instagram<span class="visually-hidden"> (opens in a new tab)</span></a>
+      <a class="row-more" href="{{ site.instagram_url }}" target="_blank" rel="noopener">Follow us on Instagram<span class="visually-hidden"> (opens in a new tab)</span></a>
     </div>
   </div>
 </section>

@@ -292,7 +292,7 @@ This theme is **provisional** until the game has its own art (§9).
 
 ### A Mind Apart
 - **Genre:** Narrative puzzle adventure
-- **Pitch:** A girl wakes in a surreal storybook world with no memory of who she is. To move forward, she must collect the pieces of her past, and face the guilt that comes with them.
+- **Pitch:** A girl wakes up in a surreal storybook world and embarks on a journey to collect her memories, while managing the guilt surrounding her past.
 - **Hooks:**
   1. **Bonds you choose.** Not everyone here has your best interests at heart. Decide who to let in, and who to keep at arm's length. The closer they get, the more they change you.
   2. **A bow and magic arrows.** Solve puzzles with a bow and enchanted arrows. Every puzzle you crack brings back another piece of who you were.
@@ -305,7 +305,7 @@ This theme is **provisional** until the game has its own art (§9).
 ### IncreCat Café
 - **Genre:** Incremental cat-café management game
 - **Tag:** In development
-- **Pitch:** Run a chaotic cat café, raise cats for their forever homes, and leave Meowlon Whiskers in the dust.
+- **Pitch:** Manage a cat café, raise cats for their forever home and surpass Meowlon Whiskers.
 - **Hooks:**
   1. **Cats looking for homes** Raise and care for a café full of cats, then help each one find its forever home.
   2. **Cat-astrophic rush hour** Juggle orders, sling plates and keep every customer happy as your café gets busier, and furrier, by the minute.

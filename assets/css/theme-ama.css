@@ -22,7 +22,6 @@
   --font-head: "CMU Sans Serif Demi Condensed", "Arial Narrow", "Helvetica Neue", sans-serif;
   --font-body: "Tinos", Georgia, "Times New Roman", serif;
 
-  --door-scrim: rgba(13, 15, 21, 0.94);
 
   /* shard shapes (frame = the image, edge = the slightly larger translucent shard behind it) */
   --shard: polygon(2% 4%, 96% 0%, 100% 90%, 93% 100%, 6% 97%, 0% 60%);
@@ -35,7 +34,7 @@ body.theme-ama { font-size: 1.1875rem; } /* Tinos runs small; nudge it up */
 
 /* Pink-white title glow, like the logo in the key art */
 .theme-ama .game-title,
-.theme-ama .door h2 {
+.theme-ama .game-row h2 {
   text-shadow: 0 0 6px rgba(246, 236, 255, 0.45), 0 0 24px rgba(201, 139, 255, 0.5);
 }
 

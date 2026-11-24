@@ -181,6 +181,8 @@ a:hover { color: var(--link-hover); }
 /* Header */
 .site-header { z-index: 10; }
 .header-inner {
+  width: 100%;
+  padding-inline: var(--gutter);
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -193,9 +195,6 @@ a:hover { color: var(--link-hover); }
 .brand { display: block; line-height: 0; border-radius: 0; }
 .brand img { height: 67px; width: auto; }
 
-/* Reserve room for the cat beside the logo so the nav wraps instead of running under it */
-.site-nav { max-width: calc(100% - 140px); }
-@media (min-width: 768px) { .site-nav { max-width: calc(100% - 200px); } }
 .site-nav ul {
   display: flex;
   flex-wrap: wrap;
@@ -230,23 +229,11 @@ a:hover { color: var(--link-hover); }
   .site-nav ul { gap: 0 var(--s3); }
 }
 
-/* The cat's head, sitting on the band's lower edge */
-.perch-cat {
-  position: absolute;
-  z-index: 2;
-  /* positioned from the logo (inside .header-inner), so it follows the content column at any width */
-  left: calc(var(--gutter) + 49px + 24px);
-  bottom: 0;
-  width: 39px; height: 42px; /* 13x14 art at 3x */
-  pointer-events: none;
-}
-@media (min-width: 768px) {
-  .perch-cat { left: calc(var(--gutter) + 49px + 48px); width: 52px; height: 56px; } /* 4x */
-}
-
 /* Footer */
 .site-footer { margin-top: auto; }
 .footer-inner {
+  width: 100%;
+  padding-inline: var(--gutter);
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -500,37 +487,31 @@ video.clip { cursor: pointer; }
 }
 
 /* ==========================================================================
-   Homepage: the two doors + "Who we are"
+   Homepage: one wide row per game + "Who we are"
    ========================================================================== */
-.doors { display: flex; flex-direction: column; }
-.door {
-  position: relative;
-  isolation: isolate;
-  display: flex; flex-direction: column; justify-content: flex-end;
-  min-height: max(72svh, 520px);
-  overflow: hidden;
-  background: var(--bg); color: var(--text);
+.game-row { background: var(--bg); color: var(--text); padding-block: var(--section-pad); }
+.game-row-inner { display: grid; gap: var(--s5); align-items: center; }
+.game-row-art { position: relative; }
+.game-row-art .art {
+  display: block; width: 100%; aspect-ratio: 16 / 9; overflow: hidden;
+  background: var(--surface); border-radius: var(--media-radius);
 }
-.door-art { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; }
-.door::after {
-  content: ""; position: absolute; inset: 0; z-index: -1;
-  background: linear-gradient(to top, var(--door-scrim) 0%, var(--door-scrim) 42%, transparent 92%);
-}
-.door-body { display: grid; grid-template-columns: minmax(0, 1fr); justify-items: start; gap: var(--s2); max-width: 540px; width: 100%; padding: var(--s8) var(--gutter) var(--s5); }
-@media (min-width: 768px) { .door-body { padding: var(--s8) var(--s5) var(--s6); } }
-.door h2 { font-size: clamp(2.25rem, 4.5vw, 3.5rem); }
-.door h2 a { color: inherit; text-decoration: none; }
-.door h2 a:hover { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 6px; }
-.door .tag { margin: 0; }
-.door-more { font-weight: 800; }
-.door-actions { min-width: 0; max-width: 100%; display: flex; flex-wrap: wrap; align-items: center; gap: var(--s2) var(--s3); margin-top: var(--s1); }
+.game-row-art img { width: 100%; height: 100%; object-fit: cover; }
+.game-row-body { display: grid; justify-items: start; gap: var(--s2); min-width: 0; max-width: 46ch; }
+.game-row h2 { font-size: clamp(2.25rem, 4.5vw, 3.5rem); }
+.game-row h2 a { color: inherit; text-decoration: none; }
+.game-row h2 a:hover { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 6px; }
+.game-row .tag { margin: 0; }
+.game-row-pitch { font-size: 1.1875rem; }
+.row-more { font-weight: 800; }
+.row-actions { min-width: 0; max-width: 100%; display: flex; flex-wrap: wrap; align-items: center; gap: var(--s2) var(--s3); margin-top: var(--s2); }
 @media (min-width: 768px) {
-  .doors { flex-direction: row; min-height: calc(100svh - 88px); }
-  .door { flex: 1 1 0; min-height: 560px; transition: flex-grow 300ms ease; }
-  .door:hover, .door:focus-within { flex-grow: 1.15; }
+  .game-row-inner { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: var(--s8); }
+  .game-row:nth-of-type(even) .game-row-art { order: 2; }
+  .game-row:nth-of-type(even) .game-row-inner { grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); }
 }
 
-.who { padding-block: var(--section-pad); }
+.who { padding-block: var(--section-pad); border-top: 1px solid rgba(52, 59, 140, 0.18); }
 .who-inner { display: grid; gap: var(--s4); max-width: 68ch; }
 .who p { font-size: 1.1875rem; }
 
